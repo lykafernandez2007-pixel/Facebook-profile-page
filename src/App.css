@@ -1,0 +1,631 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f0f2f5;
+  color: #050505;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 15px;
+
+  background: white;
+  border-bottom: 1px solid #ddd;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar button {
+  font-size: 25px;
+  color: #111;
+}
+
+.navbar .profile-icon {
+  color: #1877f2;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover {
+  height: 180px;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      #d5d7da,
+      #bfc2c5
+    );
+}
+
+.camera {
+  position: absolute;
+
+  right: 18px;
+  bottom: 15px;
+
+  width: 45px;
+  height: 45px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  font-size: 20px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-section {
+  padding: 0 20px 20px;
+
+  position: relative;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+
+  margin-top: -75px;
+
+  border-radius: 50%;
+
+  border: 5px solid white;
+
+  overflow: hidden;
+
+  background: #ddd;
+
+  position: relative;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.profile-section h1 {
+  margin: 12px 0 3px;
+
+  font-size: 30px;
+}
+
+.username {
+  margin: 0;
+
+  color: #65676b;
+
+  font-size: 17px;
+}
+
+.friends-count {
+  margin: 7px 0;
+
+  color: #65676b;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   PROFILE BUTTONS
+========================= */
+
+.buttons {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.buttons button {
+  padding: 12px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  font-weight: bold;
+}
+
+.story {
+  flex: 1;
+
+  background: #1877f2;
+
+  color: white;
+}
+
+.edit {
+  flex: 1;
+
+  background: #e4e6eb;
+
+  color: #111;
+}
+
+.more {
+  width: 50px;
+
+  background: #e4e6eb;
+
+  color: #111;
+}
+
+
+/* =========================
+   FRIENDS
+========================= */
+
+.friends-section {
+  padding: 20px;
+
+  border-top: 7px solid #f0f2f5;
+}
+
+.section-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  font-size: 25px;
+}
+
+.see-all {
+  color: #1877f2;
+
+  font-size: 16px;
+}
+
+
+/* FRIEND GRID */
+
+.friends-grid {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  overflow-x: auto;
+
+  padding-bottom: 5px;
+}
+
+.friend-card {
+  width: 115px;
+
+  flex-shrink: 0;
+
+  text-align: center;
+}
+
+.friend-picture {
+  width: 105px;
+  height: 105px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.friend-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.friend-picture span {
+  font-size: 55px;
+}
+
+.friend-picture.purple {
+  background: #9b70a8;
+}
+
+.friend-picture.pink {
+  background: #e5b4b4;
+}
+
+.friend-picture.black {
+  background: #222;
+}
+
+.friend-picture.blue {
+  background: #68b8ed;
+}
+
+.friend-card strong {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 15px;
+
+  line-height: 19px;
+}
+
+.friend-card p {
+  margin: 4px 0;
+
+  color: #65676b;
+
+  font-size: 13px;
+
+  line-height: 17px;
+}
+
+.online {
+  position: absolute;
+
+  right: 1px;
+  bottom: 3px;
+
+  width: 22px;
+  height: 22px;
+
+  background: #31a24c;
+
+  border: 3px solid white;
+
+  border-radius: 50%;
+}
+
+
+/* =========================
+   HIGHLIGHTS
+========================= */
+
+.highlights-section {
+  padding: 20px;
+
+  border-top: 7px solid #f0f2f5;
+}
+
+.highlights-section h2 {
+  margin: 0 0 18px;
+
+  font-size: 25px;
+}
+
+.highlights {
+  display: flex;
+
+  gap: 12px;
+
+  overflow-x: auto;
+}
+
+.highlight {
+  width: 145px;
+  height: 230px;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.new-highlight {
+  border: 1px solid #ddd;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  padding: 15px;
+}
+
+.highlight-icon {
+  position: absolute;
+
+  top: 80px;
+  left: 57px;
+
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #e4e6eb;
+
+  border-radius: 50%;
+
+  font-size: 25px;
+}
+
+.new-highlight strong {
+  font-size: 16px;
+}
+
+.old-highlight {
+  background: linear-gradient(#777, #222);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.old-highlight span {
+  font-size: 60px;
+}
+
+.old-highlight strong {
+  position: absolute;
+
+  bottom: 12px;
+  left: 15px;
+
+  color: white;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   POSTS
+========================= */
+
+.posts-section {
+  border-top: 7px solid #f0f2f5;
+}
+
+.posts-section > h2 {
+  margin: 0;
+
+  padding: 20px;
+
+  font-size: 25px;
+}
+
+
+/* CREATE POST */
+
+.create-post {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 18px;
+}
+
+.post-profile {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.post-input {
+  flex: 1;
+
+  padding: 13px 18px;
+
+  background: #f0f2f5;
+
+  border-radius: 25px;
+
+  color: #65676b;
+
+  font-size: 16px;
+}
+
+.post-photo {
+  font-size: 25px;
+}
+
+
+/* POST OPTIONS */
+
+.post-options {
+  display: flex;
+
+  margin-top: 15px;
+
+  padding: 12px 5px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.post-options button {
+  flex: 1;
+
+  padding: 8px;
+
+  color: #555;
+
+  font-size: 14px;
+
+  border-right: 1px solid #ddd;
+}
+
+.post-options button:last-child {
+  border-right: none;
+}
+
+
+/* =========================
+   POST
+========================= */
+
+.post {
+  padding: 18px;
+
+  border-bottom: 7px solid #f0f2f5;
+}
+
+.post-header {
+  display: flex;
+
+  align-items: center;
+}
+
+.post-header > div {
+  margin-left: 10px;
+}
+
+.post-header strong {
+  font-size: 17px;
+}
+
+.post-header p {
+  margin: 3px 0;
+
+  color: #65676b;
+
+  font-size: 13px;
+}
+
+.post-menu {
+  margin-left: auto;
+
+  font-size: 24px;
+}
+
+.post-text {
+  margin: 25px 0;
+
+  font-size: 24px;
+}
+
+.post-actions {
+  display: flex;
+
+  justify-content: space-around;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #ddd;
+}
+
+.post-actions button {
+  color: #65676b;
+
+  font-size: 15px;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .cover {
+    height: 150px;
+  }
+
+  .profile-picture {
+    width: 125px;
+    height: 125px;
+
+    margin-top: -65px;
+  }
+
+  .profile-section h1 {
+    font-size: 25px;
+  }
+
+  .friends-grid {
+    gap: 7px;
+  }
+
+  .friend-card {
+    width: 82px;
+  }
+
+  .friend-picture {
+    width: 78px;
+    height: 78px;
+  }
+
+  .friend-picture span {
+    font-size: 42px;
+  }
+
+  .friend-card strong {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .friend-card p {
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  .highlight {
+    width: 135px;
+    height: 220px;
+  }
+
+  .post-text {
+    font-size: 22px;
+  }
+
+}

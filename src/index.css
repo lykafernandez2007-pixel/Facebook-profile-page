@@ -1,0 +1,58 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================
+   HTML / BODY
+========================= */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #050505;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================
+   ROOT
+========================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  font-family: inherit;
+}
